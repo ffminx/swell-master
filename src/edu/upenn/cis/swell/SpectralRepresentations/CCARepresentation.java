@@ -178,7 +178,7 @@ public class CCARepresentation extends SpectralRepresentation implements Seriali
 		double[][] smoothedStateofToken=new double[1][_smooths.size()*_num_hidden];
 		double[][] smoothedStateofTokenCopy=new double[1][_smooths.size()*_num_hidden];
 		
-		//System.out.println("Doc Size, #sent, #tok="+doc.size()+" "+doc.getNumSentences()+" "+doc.getNumTokens());
+//		System.out.println("Doc Size, #sent, #tok="+doc.size()+" "+doc.getNumSentences()+" "+doc.getNumTokens());
 		Matrix LMatrix= new Matrix(L); 
 		Matrix smoothedStateofTokenMatrix; 
 		int tok_idx=1;
@@ -202,12 +202,7 @@ public class CCARepresentation extends SpectralRepresentation implements Seriali
 			
 			LMatrix.setMatrix(tok_idx, tok_idx, 0, LMatrix.getColumnDimension()-1, smoothedStateofTokenMatrix);
 			tok_idx++;
-			
-			
-			
-			
 		}
-		
 		return LMatrix;
 	}
 	
@@ -501,8 +496,6 @@ public class CCARepresentation extends SpectralRepresentation implements Seriali
 		while (it.hasNext()) {
 			Callable<Integer> callable = new Callable<Integer>() {
 				ArrayList<Integer> aDoc=it.next();
-				
-				
 				
 				public Integer call() throws Exception {
 					Object[] covMs=null;

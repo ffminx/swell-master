@@ -32,8 +32,6 @@ public class LRMVLEmbed implements Serializable {
 	static final long serialVersionUID = 42L;
 	
 public static void main(String[] args) throws Exception{
-		
-	
 		ArrayList<ArrayList<Integer>> all_Docs;
 		ArrayList<Integer> docSize;
 		long numTokens=0;
@@ -62,8 +60,18 @@ public static void main(String[] args) throws Exception{
 			docSize=new ArrayList<Integer>();
 			rin=new ReadDataFile(opt);
 			corpusInt= rin.convertAllDocsInt(0);
+			for(String s : corpusInt.keySet()){
+				System.out.print(s+"  "+corpusInt.get(s)+"   ");
+			}
+			System.out.println();
 			rin.readAllDocs(0);
 			all_Docs=rin.getAllDocs();
+			for(ArrayList<Integer> doc : all_Docs){
+				for(Integer i : doc){
+					System.out.print(i+" ");
+				}
+				System.out.println();
+			}
 			docSize=rin.getDocSizes();
 			numTokens=rin.getNumTokens();
 			rin.serializeCorpusIntMapped();
@@ -82,8 +90,6 @@ public static void main(String[] args) throws Exception{
 			if (opt.randomBaseline){
 				wout.writeEigenDictRandom();
 			}
-			
-			
 			System.out.println("+++LR-MVL Embedddings Induced+++\n");	
 		}
 		if (opt.train){

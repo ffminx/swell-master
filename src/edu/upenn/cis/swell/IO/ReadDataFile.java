@@ -129,7 +129,6 @@ public class ReadDataFile implements Serializable {
 					numTokens++;
 					eachDoc.add(wInt);
 				}
-				
 			}
 			else{
 				numDocs++;
@@ -143,15 +142,9 @@ public class ReadDataFile implements Serializable {
 			line=in.readLine();
 		}
 		    in.close();
-		   allDocs.add((ArrayList<Integer>) eachDoc.clone());
-		    
+		    allDocs.add((ArrayList<Integer>) eachDoc.clone());
 		    docSizes.add(docCounter);
-
-		
 	}
-	
-	
-	
 	
 	public void readAllDocsNGrams() throws Exception{
 		
@@ -876,11 +869,12 @@ public HashMap<String, Integer> convertAllDocsIntNGramsSingleVocab() throws Exce
 		
 	}
 	
+	//返回文档的词频排名，注意value为排名，不是词频。
 	public HashMap<String,Integer> convertAllDocsInt(int dataOption) throws Exception{
 		
-		if (dataOption==0)
+		if (dataOption==0){
 			in= new BufferedReader(new InputStreamReader(new FileInputStream(_opt.unlabDataTrainfile), "UTF8"));
-	
+		}
 		
 		if (dataOption==1){
 			in=new BufferedReader(new InputStreamReader(new FileInputStream(_opt.trainfile), "UTF8"));			
@@ -902,9 +896,10 @@ public HashMap<String, Integer> convertAllDocsIntNGramsSingleVocab() throws Exce
 			if (!line.equals(docEndSymbol)){
 				docCounter++;
 				ArrayList<String> norm1=new ArrayList<String>();
+				//返回该行的分词，以空格分隔
 				norm1=tokenize(line);
 				
-				//做两次预处理操作
+				//做两次预处理操作,默认不做
 				if (lowercase)
 					norm1=lowercase(norm1);
 				if (normalize)
@@ -925,7 +920,6 @@ public HashMap<String, Integer> convertAllDocsIntNGramsSingleVocab() throws Exce
 			int i=0;
 			if (i==0)
 				corpusIntMapped.put("<OOV>",i++);
-			//排序，并只返回vocabSize指定大小的词
 			for (String keys:sorted_countW.keySet()){
 				if (i<= _opt.vocabSize)
 					corpusIntMapped.put(keys,i++);
