@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="E:/Workspace/swell-master/bin"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/Jama-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/parallelcolt-0.9.4.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/mtj-0.9.14.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/Utils.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/netlib-java-0.9.3.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/netlib-java.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/arpack_combined_all.jar"/>
+	<classpathentry kind="lib" path="E:/Workspace/swell-master/libs/optimization.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
