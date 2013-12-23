@@ -503,12 +503,9 @@ public class CCARepresentation extends SpectralRepresentation implements Seriali
 						updateCovs(covMs);
 					return 1;
 				}
-
-				
 			};
 			futures.add(service.submit(callable));
 		}
-
 		service.shutdown();
 		List<Integer> outputs = new ArrayList<Integer>();
 		int i=0;

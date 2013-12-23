@@ -137,6 +137,8 @@ public class CCAWriter extends WriteDataFile implements EmbeddingWriter {
 		double[][] eigenDictArrR=eigenDictR.getArray();
 		
 		try {
+			System.out.println("write _opt.lSVecName:"+_opt.lSVecName);
+			System.out.println("write _opt.rSVecName:"+_opt.rSVecName);
 			writer=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(_opt.lSVecName),"UTF8"));
 			writer1=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(_opt.rSVecName),"UTF8"));
 		} catch (UnsupportedEncodingException e) {

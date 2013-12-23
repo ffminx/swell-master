@@ -113,7 +113,7 @@ public final class Options implements Serializable {
 		
 		lSVecName = outputDir+"PhiLSingVect."+algorithm;
 		
-		rSVecName = outputDir+"PhiLSingVect."+algorithm;
+		rSVecName = outputDir+"PhiRSingVect."+algorithm;
 		
 	    
 		if (pair[0].equals("context-sensitive"))
